@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEND Capstone</title>
+</head>
+
+<body class="modal-open">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-s-12" id="main-heading-container">
+        <h1>Plan your trip!</h1>
+      </div>
+    </div>
+    <div class="row" id="form-container">
+      <div class="col-4 col-s-12">
+        <label for="destination">Where do you want to visit: </label><br>
+        <input id="city" placeholder="Please enter city name" type="text">
+        <input id="country" placeholder="Please enter country name" type="text">
+
+      </div>
+      <div class="col-4 col-s-12">
+        <label for="start">Start date: </label><br>
+        <input id="start" placeholder="dd/mm/yyyy" type="date">
+      </div>
+      <div class="col-4 col-s-12">
+        <label for="end">End date: </label><br>
+        <input id="end" placeholder="dd/mm/yyyy" type="date">
+      </div>
+    </div>
+    <div class="row" id="form-container">
+      <div class="col-12 col-s-12">
+        <p id="status"></p>
+      </div>
+    </div>
+    <div class="row" id="form-container">
+      <div class="col-12" id="btn-container">
+        <button class="btn btn-primary" type="button" id="form-submit" >Submit</button>
+      </div>
+    </div>
+  </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-header">
+      <h2 class="modal-title" id="exampleModalLongTitle">Your trip to <span id="modal-city"></span>, <span
+        id="modal-country"></span></h2>
+    </div>
+          <img src="" id="modal-img">
+          <p>The temperature at your destination is: <span id="modal-temp"></span>&#x2103;</p>
+          <p>The weather at your destination is: <span id="modal-weather"></span></p>
+          <p>The population of your destination is: <span id="modal-population"></span></p>
+          <p>The time remaining at the start of trip is: <span id="modal-timeRemaining"></span></p>
+          <p>Your travel time is: <span id="modal-tripLength"></span></p>
+  </div>
+
+</div>
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
